@@ -1,0 +1,27 @@
+{
+  "Bare Node.js": {
+    "command": "node",
+    "args": ["subjects/node/bare-node"],
+    "signal": "Server has been started"
+  },
+  "Dragonrend.js": {
+    "command": "node",
+    "args": ["subjects/node/dragonrend"],
+    "signal": "Server has been started"
+  },
+  "Express.js": {
+    "command": "node",
+    "args": ["subjects/node/express"],
+    "signal": "Server has been started"
+  },
+  "Fastify.js": {
+    "command": "node",
+    "args": ["subjects/node/fastify"],
+    "signal": "Server has been started"
+  },
+  "Koa.js": {
+    "command": "node",
+    "args": ["subjects/node/koa"],
+    "signal": "Server has been started"
+  }
+}
