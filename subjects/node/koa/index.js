@@ -18,4 +18,4 @@ app.use(bodyparser())
 
 app.use(router.routes())
 
-app.listen(3000, () => console.log('Server has been started'))
+app.listen(8080, () => console.log('Server has been started'))

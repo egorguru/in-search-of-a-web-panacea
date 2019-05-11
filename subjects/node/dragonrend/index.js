@@ -25,4 +25,4 @@ app.merge(router)
 
 http
   .createServer(app.toListener())
-  .listen(3000, () => console.log('Server has been started'))
+  .listen(8080, () => console.log('Server has been started'))
