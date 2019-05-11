@@ -13,5 +13,17 @@
   "bugs": {
     "url": "https://github.com/EgorRepnikov/web-benchmark/issues"
   },
-  "homepage": "https://github.com/EgorRepnikov/web-benchmark#readme"
+  "homepage": "https://github.com/EgorRepnikov/web-benchmark#readme",
+  "dependencies": {
+    "autocannon": "^3.2.1",
+    "body-parser": "^1.19.0",
+    "dragonrend": "^0.1.0",
+    "dragonrend-json-body-parser": "^0.1.0",
+    "dragonrend-response": "^0.1.0",
+    "express": "^4.16.4",
+    "fastify": "^2.3.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  }
 }
