@@ -1,0 +1,17 @@
+{
+  "name": "web-benchmark",
+  "version": "0.1.0",
+  "description": "Benchmark of Web Instruments",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgorRepnikov/web-benchmark.git"
+  },
+  "author": "Egor Repnikov <egorepnikov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EgorRepnikov/web-benchmark/issues"
+  },
+  "homepage": "https://github.com/EgorRepnikov/web-benchmark#readme"
+}
