@@ -28,5 +28,10 @@
     "command": "java",
     "args": ["-jar", "subjects/java/http-server/target/http-server.jar"],
     "signal": "Server has been started"
+  },
+  "Java Socket Server": {
+    "command": "java",
+    "args": ["-jar", "subjects/java/socket-server/target/socket-server.jar"],
+    "signal": "Server has been started"
   }
 }
