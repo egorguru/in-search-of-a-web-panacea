@@ -1,3 +1,3 @@
 const runner = require('./lib/runner')
 
-runner()
+runner().catch((e) => console.log(e))
