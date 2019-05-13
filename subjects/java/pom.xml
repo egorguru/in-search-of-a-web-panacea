@@ -12,6 +12,7 @@
     <modules>
         <module>http-server</module>
         <module>socket-server</module>
+        <module>spring</module>
     </modules>
 
 </project>

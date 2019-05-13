@@ -33,5 +33,10 @@
     "command": "java",
     "args": ["-jar", "subjects/java/socket-server/target/socket-server.jar"],
     "signal": "Server has been started"
+  },
+  "Spring Boot": {
+    "command": "java",
+    "args": ["-jar", "subjects/java/spring/target/spring.jar"],
+    "signal": "Server has been started"
   }
 }
