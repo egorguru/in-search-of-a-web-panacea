@@ -3,37 +3,58 @@ package com.erepnikov.http;
 import com.sun.net.httpserver.HttpServer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.nio.charset.StandardCharsets;
 
 public class Server {
 
     static class Message {
 
-        private String hello;
+        private String message;
 
-        Message(String hello) {
-            this.hello = hello;
+        Message() {}
+
+        Message(String message) {
+            this.message = message;
         }
 
-        public String getHello() {
-            return hello;
+        public String getMessage() {
+            return message;
         }
 
-        public void setHello(String hello) {
-            this.hello = hello;
+        public void setMessage(String message) {
+            this.message = message;
         }
     }
 
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        server.createContext("/api/get", t -> {
-            Message message = new Message("world");
-            byte[] res = mapper.writeValueAsBytes(message);
+        server.createContext("/api", t -> {
+            String path = t.getRequestURI().getPath().substring(4);
             t.getResponseHeaders().add("Content-Type", "application/json");
-            t.sendResponseHeaders(200, res.length);
             OutputStream os = t.getResponseBody();
+            byte[] res;
+            switch (path) {
+                case "/get": {
+                    res = mapper.writeValueAsBytes(new Message("Hello There"));
+                    t.sendResponseHeaders(200, res.length);
+                    break;
+                }
+                case "/post": {
+                    Message requestBody = mapper.readValue(t.getRequestBody(), Message.class);
+                    res = mapper.writeValueAsBytes(requestBody);
+                    t.sendResponseHeaders(200, res.length);
+                    break;
+                }
+                default: {
+                    res = mapper.writeValueAsBytes(new Message("Not Found"));
+                    t.sendResponseHeaders(404, 0);
+                }
+            }
             os.write(res);
             os.close();
         });
