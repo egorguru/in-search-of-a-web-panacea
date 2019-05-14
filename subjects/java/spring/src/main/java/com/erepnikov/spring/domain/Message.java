@@ -2,13 +2,13 @@ package com.erepnikov.spring.domain;
 
 public class Message {
 
-    private String world;
+    private String message;
 
-    public String getWorld() {
-        return world;
+    public String getMessage() {
+        return message;
     }
 
-    public void setWorld(String world) {
-        this.world = world;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
