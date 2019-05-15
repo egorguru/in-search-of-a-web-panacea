@@ -5,7 +5,8 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    }
+    },
+    "supports": ["get", "post"]
   },
   "Dragonrend.js": {
     "dir": "node/dragonrend",
@@ -13,7 +14,8 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    }
+    },
+    "supports": ["get", "post"]
   },
   "Express.js": {
     "dir": "node/express",
@@ -21,7 +23,8 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    }
+    },
+    "supports": ["get", "post"]
   },
   "Fastify.js": {
     "dir": "node/fastify",
@@ -29,7 +32,8 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    }
+    },
+    "supports": ["get", "post"]
   },
   "Koa.js": {
     "dir": "node/koa",
@@ -37,7 +41,8 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    }
+    },
+    "supports": ["get", "post"]
   },
   "Java Http Server": {
     "dir": "java/http-server",
@@ -45,7 +50,8 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/http-server.jar"]
-    }
+    },
+    "supports": ["get"]
   },
   "Java Socket Server": {
     "dir": "java/socket-server",
@@ -53,7 +59,8 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
-    }
+    },
+    "supports": ["get"]
   },
   "Spring Boot": {
     "dir": "java/spring",
@@ -61,6 +68,7 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/spring.jar"]
-    }
+    },
+    "supports": ["get", "post"]
   }
 }
