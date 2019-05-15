@@ -1,42 +1,74 @@
 {
   "Bare Node.js": {
-    "command": "node",
-    "args": ["subjects/node/bare-node"],
+    "dir": "node/bare-node",
+    "build": "npm install",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
     "signal": "Server has been started"
   },
   "Dragonrend.js": {
-    "command": "node",
-    "args": ["subjects/node/dragonrend"],
+    "dir": "node/dragonrend",
+    "build": "npm install",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
     "signal": "Server has been started"
   },
   "Express.js": {
-    "command": "node",
-    "args": ["subjects/node/express"],
+    "dir": "node/express",
+    "build": "npm install",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
     "signal": "Server has been started"
   },
   "Fastify.js": {
-    "command": "node",
-    "args": ["subjects/node/fastify"],
+    "dir": "node/fastify",
+    "build": "npm install",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
     "signal": "Server has been started"
   },
   "Koa.js": {
-    "command": "node",
-    "args": ["subjects/node/koa"],
+    "dir": "node/koa",
+    "build": "npm install",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
     "signal": "Server has been started"
   },
   "Java Http Server": {
-    "command": "java",
-    "args": ["-jar", "subjects/java/http-server/target/http-server.jar"],
+    "dir": "java/http-server",
+    "build": "mvn clean package",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/http-server.jar"]
+    },
     "signal": "Server has been started"
   },
   "Java Socket Server": {
-    "command": "java",
-    "args": ["-jar", "subjects/java/socket-server/target/socket-server.jar"],
+    "dir": "java/socket-server",
+    "build": "mvn clean package",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/socket-server.jar"]
+    },
     "signal": "Server has been started"
   },
   "Spring Boot": {
-    "command": "java",
-    "args": ["-jar", "subjects/java/spring/target/spring.jar"],
+    "dir": "java/spring",
+    "build": "mvn clean package",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/spring.jar"]
+    },
     "signal": "Server has been started"
   }
 }
