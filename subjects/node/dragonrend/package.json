@@ -1,0 +1,15 @@
+{
+  "name": "dragonrend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Egor Repnikov <egorepnikov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dragonrend": "^0.1.1",
+    "dragonrend-json-body-parser": "^0.1.1",
+    "dragonrend-response": "^0.1.1"
+  }
+}
