@@ -60,6 +60,6 @@ public class Server {
         });
         server.setExecutor(null);
         server.start();
-        System.out.println("Server has been started");
+        System.out.println("START");
     }
 }

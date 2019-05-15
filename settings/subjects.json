@@ -5,8 +5,7 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Dragonrend.js": {
     "dir": "node/dragonrend",
@@ -14,8 +13,7 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Express.js": {
     "dir": "node/express",
@@ -23,8 +21,7 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Fastify.js": {
     "dir": "node/fastify",
@@ -32,8 +29,7 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Koa.js": {
     "dir": "node/koa",
@@ -41,8 +37,7 @@
     "run": {
       "command": "npm",
       "args": ["run", "start"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Java Http Server": {
     "dir": "java/http-server",
@@ -50,8 +45,7 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/http-server.jar"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Java Socket Server": {
     "dir": "java/socket-server",
@@ -59,8 +53,7 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
-    },
-    "signal": "Server has been started"
+    }
   },
   "Spring Boot": {
     "dir": "java/spring",
@@ -68,7 +61,6 @@
     "run": {
       "command": "java",
       "args": ["-jar", "target/spring.jar"]
-    },
-    "signal": "Server has been started"
+    }
   }
 }

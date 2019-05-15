@@ -14,6 +14,6 @@ public class Application {
 
 	@EventListener(ContextRefreshedEvent.class)
 	public void contextRefreshedEvent() {
-		System.out.println("Server has been started");
+		System.out.println("START");
 	}
 }

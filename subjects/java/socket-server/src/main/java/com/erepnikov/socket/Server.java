@@ -12,28 +12,28 @@ public class Server {
 
     static class Message {
 
-        private String hello;
+        private String message;
 
-        Message(String hello) {
-            this.hello = hello;
+        Message(String message) {
+            this.message = message;
         }
 
-        public String getHello() {
-            return hello;
+        public String getMessage() {
+            return message;
         }
 
-        public void setHello(String hello) {
-            this.hello = hello;
+        public void setMessage(String message) {
+            this.message = message;
         }
     }
 
     public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ServerSocket server = new ServerSocket(8080);
-        System.out.println("Server has been started");
+        System.out.println("START");
         while (true) {
             try (Socket socket = server.accept(); OutputStream os = socket.getOutputStream()) {
-                String json = mapper.writeValueAsString(new Message("world"));
+                String json = mapper.writeValueAsString(new Message("Hello There"));
                 String result = String.format(
                         "HTTP/1.1 200 OK%nContent-Type: application/json%nContent-Length: %s%n%n%s",
                         json.length(), json

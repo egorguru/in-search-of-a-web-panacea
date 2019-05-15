@@ -21,4 +21,4 @@ http.createServer((req, res) => {
       res.writeHead(404, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ message: 'Not Found' }))
   }
-}).listen(8080, () => console.log('Server has been started'))
+}).listen(8080, () => console.log('START'))

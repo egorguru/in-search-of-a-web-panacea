@@ -10,7 +10,7 @@ public class MessageController {
     @GetMapping("/get")
     public Message get() {
         Message message = new Message();
-        message.setMessage("hello");
+        message.setMessage("Hello There");
         return message;
     }
 
