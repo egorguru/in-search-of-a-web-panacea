@@ -3,15 +3,20 @@ package com.erepnikov.spring.controller;
 import com.erepnikov.spring.domain.Message;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/api")
 public class MessageController {
 
     @GetMapping("/get")
     public Message get() {
-        Message message = new Message();
-        message.setMessage("Hello There");
-        return message;
+        return new Message(
+                123,
+                "Hello There",
+                new String[] {"And", "There"},
+                new Date()
+        );
     }
 
     @PostMapping("/post")

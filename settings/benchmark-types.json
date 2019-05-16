@@ -7,6 +7,6 @@
     "url": "http://localhost:8080/api/post",
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"number\":1557604997588,\"string\":\"Hi There\",\"objectArray\":[{\"message\":\"And there!\"}]}"
+    "body": "{\"id\":123,\"message\":\"Hi There\",\"extra\":[\"And\", \"There\"]}"
   }
 }

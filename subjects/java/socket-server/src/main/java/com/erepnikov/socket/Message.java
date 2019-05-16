@@ -1,4 +1,4 @@
-package com.erepnikov.spring.domain;
+package com.erepnikov.socket;
 
 import java.util.Date;
 

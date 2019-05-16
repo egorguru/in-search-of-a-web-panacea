@@ -3,34 +3,14 @@ package com.erepnikov.http;
 import com.sun.net.httpserver.HttpServer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
+import java.util.Date;
 
 public class Server {
 
-    static class Message {
-
-        private String message;
-
-        Message() {}
-
-        Message(String message) {
-            this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-    }
-
-    public static void main(String[] args) throws Exception {
+    public void serve() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/api", t -> {
@@ -40,7 +20,13 @@ public class Server {
             byte[] res;
             switch (path) {
                 case "/get": {
-                    res = mapper.writeValueAsBytes(new Message("Hello There"));
+                    Message message = new Message(
+                            123,
+                            "Hello There",
+                            new String[] {"And", "There"},
+                            new Date()
+                    );
+                    res = mapper.writeValueAsBytes(message);
                     t.sendResponseHeaders(200, res.length);
                     break;
                 }
@@ -51,7 +37,7 @@ public class Server {
                     break;
                 }
                 default: {
-                    res = mapper.writeValueAsBytes(new Message("Not Found"));
+                    res = new byte[] {};
                     t.sendResponseHeaders(404, 0);
                 }
             }
@@ -60,6 +46,10 @@ public class Server {
         });
         server.setExecutor(null);
         server.start();
+    }
+
+    public static void main(String[] args) throws Exception {
+        new Server().serve();
         System.out.println("START");
     }
 }

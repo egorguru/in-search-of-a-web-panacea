@@ -51,7 +51,7 @@
       "command": "java",
       "args": ["-jar", "target/http-server.jar"]
     },
-    "supports": ["get"]
+    "supports": ["get", "post"]
   },
   "Java Socket Server": {
     "dir": "java/socket-server",
