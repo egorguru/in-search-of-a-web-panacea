@@ -18,7 +18,14 @@ router.post('/post', (data) => {
 })
 
 router.get('/get', (data) => {
-  data.response.body = { hello: 'world' }
+  data.response.body = {
+    id: 123,
+    message: 'Hello There',
+    extra: [
+      'And',
+      'There'
+    ]
+  }
 })
 
 app.merge(router)

@@ -10,7 +10,14 @@ app.use(bodyParser.json())
 router.post('/post', (req, res) => res.json(req.body))
 
 router.get('/get', (req, res) => {
-  res.json({ hello: 'world' })
+  res.json({
+    id: 123,
+    message: 'Hello There',
+    extra: [
+      'And',
+      'There'
+    ]
+  })
 })
 
 app.use('/api', router)

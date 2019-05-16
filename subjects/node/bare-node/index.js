@@ -15,7 +15,14 @@ http.createServer((req, res) => {
       break
     case '/api/get':
       res.writeHead(200, { 'Content-Type': 'application/json' })
-      res.end(JSON.stringify({ hello: 'world' }))
+      res.end(JSON.stringify({
+        id: 123,
+        message: 'Hello There',
+        extra: [
+          'And',
+          'There'
+        ]
+      }))
       break
     default:
       res.writeHead(404, { 'Content-Type': 'application/json' })

@@ -7,7 +7,14 @@ app.post('/api/post', async (request, reply) => {
 })
 
 app.get('/api/get', async (request, reply) => {
-  return { hello: 'world' }
+  return {
+    id: 123,
+    message: 'Hello There',
+    extra: [
+      'And',
+      'There'
+    ]
+  }
 })
 
 app.listen(8080, () => console.log('START'))

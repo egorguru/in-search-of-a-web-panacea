@@ -11,7 +11,14 @@ router.post('/post', (ctx) => {
 })
 
 router.get('/get', (ctx) => {
-  ctx.body = { hello: 'world' }
+  ctx.body = {
+    id: 123,
+    message: 'Hello There',
+    extra: [
+      'And',
+      'There'
+    ]
+  }
 })
 
 app.use(bodyparser())
