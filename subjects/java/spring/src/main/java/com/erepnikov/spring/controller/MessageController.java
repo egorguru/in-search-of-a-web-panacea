@@ -3,8 +3,6 @@ package com.erepnikov.spring.controller;
 import com.erepnikov.spring.domain.Message;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
 @RestController
 @RequestMapping("/api")
 public class MessageController {
@@ -14,8 +12,7 @@ public class MessageController {
         return new Message(
                 123,
                 "Hello There",
-                new String[] {"And", "There"},
-                new Date()
+                new String[] {"And", "There"}
         );
     }
 

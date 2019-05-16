@@ -1,7 +1,5 @@
 package com.erepnikov.socket;
 
-import java.util.Date;
-
 public class Message {
 
     private Integer id;
@@ -10,15 +8,12 @@ public class Message {
 
     private String[] extra;
 
-    private Date date;
-
     public Message() {}
 
-    public Message(Integer id, String message, String[] extra, Date date) {
+    public Message(Integer id, String message, String[] extra) {
         this.id = id;
         this.message = message;
         this.extra = extra;
-        this.date = date;
     }
 
     public Integer getId() {
@@ -43,13 +38,5 @@ public class Message {
 
     public void setExtra(String[] extra) {
         this.extra = extra;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 }

@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.util.Date;
 
 public class Server {
 
@@ -23,8 +22,7 @@ public class Server {
                     Message message = new Message(
                             123,
                             "Hello There",
-                            new String[] {"And", "There"},
-                            new Date()
+                            new String[] {"And", "There"}
                     );
                     res = mapper.writeValueAsBytes(message);
                     t.sendResponseHeaders(200, res.length);

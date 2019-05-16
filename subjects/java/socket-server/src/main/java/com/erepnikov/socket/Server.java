@@ -6,7 +6,6 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
 
 public class Server {
 
@@ -19,8 +18,7 @@ public class Server {
                 Message message = new Message(
                         123,
                         "Hello There",
-                        new String[] {"And", "There"},
-                        new Date()
+                        new String[] {"And", "There"}
                 );
                 String json = mapper.writeValueAsString(message);
                 String result = String.format(
