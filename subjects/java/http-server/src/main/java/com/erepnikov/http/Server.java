@@ -14,7 +14,6 @@ public class Server {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/api", t -> {
             String path = t.getRequestURI().getPath().substring(4);
-            t.getResponseHeaders().add("Content-Type", "application/json");
             OutputStream os = t.getResponseBody();
             byte[] res;
             switch (path) {
@@ -25,13 +24,21 @@ public class Server {
                             new String[] {"And", "There"}
                     );
                     res = mapper.writeValueAsBytes(message);
+                    t.getResponseHeaders().add("Content-Type", "application/json");
                     t.sendResponseHeaders(200, res.length);
                     break;
                 }
                 case "/post-json-entity": {
                     Message requestBody = mapper.readValue(t.getRequestBody(), Message.class);
                     res = mapper.writeValueAsBytes(requestBody);
+                    t.getResponseHeaders().add("Content-Type", "application/json");
                     t.sendResponseHeaders(201, res.length);
+                    break;
+                }
+                case "/get-plain-text": {
+                    res = "Hello There".getBytes();
+                    t.getResponseHeaders().add("Content-Type", "plain/text");
+                    t.sendResponseHeaders(200, res.length);
                     break;
                 }
                 default: {

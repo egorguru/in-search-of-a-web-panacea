@@ -22,6 +22,10 @@ router.get('/get-json-entity', (ctx) => {
   }
 })
 
+router.get('/get-plain-text', (ctx) => {
+  ctx.body = 'Hello There'
+})
+
 app.use(bodyparser())
 
 app.use(router.routes())

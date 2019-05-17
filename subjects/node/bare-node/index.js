@@ -24,6 +24,10 @@ http.createServer((req, res) => {
         ]
       }))
       break
+    case '/api/get-plain-text':
+      res.writeHead(201, { 'Content-Type': 'plain/text' })
+      res.end('Hello There')
+      break
     default:
       res.writeHead(404, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ message: 'Not Found' }))

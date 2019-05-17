@@ -8,7 +8,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Dragonrend.js": {
@@ -20,7 +21,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Express.js": {
@@ -32,7 +34,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Fastify.js": {
@@ -44,7 +47,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Koa.js": {
@@ -56,7 +60,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Java Http Server": {
@@ -68,7 +73,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   },
   "Java Socket Server": {
@@ -89,7 +95,8 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it"
+      "post-json-entity-and-return-it",
+      "get-plain-text"
     ]
   }
 }

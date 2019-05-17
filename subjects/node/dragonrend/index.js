@@ -29,6 +29,11 @@ router.get('/get-json-entity', (data) => {
   data.response.status = 201
 })
 
+router.get('/get-plain-text', (data) => {
+  data.response.body = 'Hello There'
+  data.response.contentType = 'application/json'
+})
+
 app.merge(router)
 
 http

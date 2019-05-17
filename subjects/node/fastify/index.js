@@ -22,4 +22,10 @@ app.get('/api/get-json-entity', (request, reply) => {
     })
 })
 
+app.get('/api/get-plain-text', (request, reply) => {
+  reply
+    .header('Content-Type', 'plain/text')
+    .send('Hello There')
+})
+
 app.listen(8080, () => console.log('START'))

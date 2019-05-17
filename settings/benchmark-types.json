@@ -8,5 +8,9 @@
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
     "body": "{\"id\":123,\"message\":\"Hi There\",\"extra\":[\"And\", \"There\"]}"
+  },
+  "get-plain-text": {
+    "url": "http://localhost:8080/api/get-plain-text",
+    "method": "GET"
   }
 }

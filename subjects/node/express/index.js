@@ -23,6 +23,10 @@ router.get('/get-json-entity', (req, res) => {
   })
 })
 
+router.get('/get-plain-text', (req, res) => {
+  res.send('Hello There')
+})
+
 app.use('/api', router)
 
 app.listen(8080, () => console.log('START'))
