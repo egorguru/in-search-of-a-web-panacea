@@ -84,7 +84,7 @@
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
     },
-    "supports": ["get-json-entity"]
+    "supports": ["get-plain-text"]
   },
   "Spring Boot": {
     "dir": "java/spring",

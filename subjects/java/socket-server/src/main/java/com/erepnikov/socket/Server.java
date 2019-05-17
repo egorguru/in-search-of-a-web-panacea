@@ -1,7 +1,5 @@
 package com.erepnikov.socket;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,20 +8,14 @@ import java.nio.charset.StandardCharsets;
 public class Server {
 
     public static void main(String[] args) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
         ServerSocket server = new ServerSocket(8080);
         System.out.println("START");
         while (true) {
             try (Socket socket = server.accept(); OutputStream os = socket.getOutputStream()) {
-                Message message = new Message(
-                        123,
-                        "Hello There",
-                        new String[] {"And", "There"}
-                );
-                String json = mapper.writeValueAsString(message);
+                String content = "Hello There";
                 String result = String.format(
-                        "HTTP/1.1 200 OK%nContent-Type: application/json%nContent-Length: %s%n%n%s",
-                        json.length(), json
+                        "HTTP/1.1 200 OK%nContent-Type: plain/text%nContent-Length: %s%n%n%s",
+                        content.length(), content
                 );
                 os.write(result.getBytes());
             } catch (Exception e) {
