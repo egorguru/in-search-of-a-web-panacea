@@ -6,7 +6,10 @@
       "command": "npm",
       "args": ["run", "start"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Dragonrend.js": {
     "dir": "node/dragonrend",
@@ -15,7 +18,10 @@
       "command": "npm",
       "args": ["run", "start"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Express.js": {
     "dir": "node/express",
@@ -24,7 +30,10 @@
       "command": "npm",
       "args": ["run", "start"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Fastify.js": {
     "dir": "node/fastify",
@@ -33,7 +42,10 @@
       "command": "npm",
       "args": ["run", "start"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Koa.js": {
     "dir": "node/koa",
@@ -42,7 +54,10 @@
       "command": "npm",
       "args": ["run", "start"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Java Http Server": {
     "dir": "java/http-server",
@@ -51,7 +66,10 @@
       "command": "java",
       "args": ["-jar", "target/http-server.jar"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   },
   "Java Socket Server": {
     "dir": "java/socket-server",
@@ -60,7 +78,7 @@
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
     },
-    "supports": ["get"]
+    "supports": ["get-json-entity"]
   },
   "Spring Boot": {
     "dir": "java/spring",
@@ -69,6 +87,9 @@
       "command": "java",
       "args": ["-jar", "target/spring.jar"]
     },
-    "supports": ["get", "post"]
+    "supports": [
+      "get-json-entity",
+      "post-json-entity-and-return-it"
+    ]
   }
 }

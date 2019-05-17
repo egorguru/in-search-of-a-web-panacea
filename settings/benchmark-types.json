@@ -1,9 +1,9 @@
 {
-  "get": {
+  "get-json-entity": {
     "url": "http://localhost:8080/api/get",
     "method": "GET"
   },
-  "post": {
+  "post-json-entity-and-return-it": {
     "url": "http://localhost:8080/api/post",
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
