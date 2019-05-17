@@ -13,11 +13,11 @@ app.addHandlerAfter(jsonResponse.after)
 
 const router = new Router({ prefix: '/api' })
 
-router.post('/post', (data) => {
+router.post('/post-json-entity', (data) => {
   data.response.body = data.request.body
 })
 
-router.get('/get', (data) => {
+router.get('/get-json-entity', (data) => {
   data.response.body = {
     id: 123,
     message: 'Hello There',
@@ -26,6 +26,7 @@ router.get('/get', (data) => {
       'There'
     ]
   }
+  data.response.status = 201
 })
 
 app.merge(router)

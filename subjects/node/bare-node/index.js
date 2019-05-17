@@ -4,7 +4,7 @@ const url = require('url')
 http.createServer((req, res) => {
   const path = url.parse(req.url, true).pathname
   switch (path) {
-    case '/api/post':
+    case '/api/post-json-entity':
       let buffer = ''
       req.on('data', (chunk) => buffer += chunk)
       req.on('end', () => {
@@ -13,8 +13,8 @@ http.createServer((req, res) => {
         res.end(JSON.stringify(body))
       })
       break
-    case '/api/get':
-      res.writeHead(200, { 'Content-Type': 'application/json' })
+    case '/api/get-json-entity':
+      res.writeHead(201, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({
         id: 123,
         message: 'Hello There',

@@ -18,7 +18,7 @@ public class Server {
             OutputStream os = t.getResponseBody();
             byte[] res;
             switch (path) {
-                case "/get": {
+                case "/get-json-entity": {
                     Message message = new Message(
                             123,
                             "Hello There",
@@ -28,10 +28,10 @@ public class Server {
                     t.sendResponseHeaders(200, res.length);
                     break;
                 }
-                case "/post": {
+                case "/post-json-entity": {
                     Message requestBody = mapper.readValue(t.getRequestBody(), Message.class);
                     res = mapper.writeValueAsBytes(requestBody);
-                    t.sendResponseHeaders(200, res.length);
+                    t.sendResponseHeaders(201, res.length);
                     break;
                 }
                 default: {

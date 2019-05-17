@@ -6,11 +6,12 @@ const app = new Koa()
 
 const router = new Router().prefix('/api')
 
-router.post('/post', (ctx) => {
+router.post('/post-json-entity', (ctx) => {
   ctx.body = ctx.request.body
+  ctx.status = 201
 })
 
-router.get('/get', (ctx) => {
+router.get('/get-json-entity', (ctx) => {
   ctx.body = {
     id: 123,
     message: 'Hello There',

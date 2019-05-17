@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class MessageController {
 
-    @GetMapping("/get")
+    @GetMapping("/get-json-entity")
     public Message get() {
         return new Message(
                 123,
@@ -16,7 +16,8 @@ public class MessageController {
         );
     }
 
-    @PostMapping("/post")
+    @ResponseStatus(HttpMethod.CREATE)
+    @PostMapping("/post-json-entity")
     public Message post(@RequestBody Message message) {
         return message;
     }

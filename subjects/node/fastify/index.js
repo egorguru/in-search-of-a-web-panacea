@@ -2,19 +2,24 @@ const fastify = require('fastify')
 
 const app = fastify()
 
-app.post('/api/post', async (request, reply) => {
-  return request.body
+app.post('/api/post-json-entity', (request, reply) => {
+  reply
+    .code(201)
+    .header('Content-Type', 'application/json')
+    .send(request.body)
 })
 
-app.get('/api/get', async (request, reply) => {
-  return {
-    id: 123,
-    message: 'Hello There',
-    extra: [
-      'And',
-      'There'
-    ]
-  }
+app.get('/api/get-json-entity', (request, reply) => {
+  reply
+    .header('Content-Type', 'application/json')
+    .send({
+      id: 123,
+      message: 'Hello There',
+      extra: [
+        'And',
+        'There'
+      ]
+    })
 })
 
 app.listen(8080, () => console.log('START'))

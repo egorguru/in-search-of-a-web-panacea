@@ -7,9 +7,12 @@ const router = express.Router()
 
 app.use(bodyParser.json())
 
-router.post('/post', (req, res) => res.json(req.body))
+router.post('/post-json-entity', (req, res) => {
+  res.status(201)
+  res.json(req.body)
+})
 
-router.get('/get', (req, res) => {
+router.get('/get-json-entity', (req, res) => {
   res.json({
     id: 123,
     message: 'Hello There',
