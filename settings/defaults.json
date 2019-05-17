@@ -1,0 +1,9 @@
+{
+    "type": "get-json-entity",
+    "connections": 100,
+    "pipelining": 10,
+    "duration": 40,
+    "builder-processes-stdio": "inherit",
+    "benchmark-processes-stdio": "pipe",
+    "start-signal": "START"
+}
