@@ -8,7 +8,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -21,7 +21,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -34,7 +34,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -47,7 +47,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -60,7 +60,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -73,7 +73,7 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
       "get-plain-text"
     ]
   },
@@ -84,7 +84,7 @@
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
     },
-    "supports": ["get-plain-text"]
+    "supports": []
   },
   "Spring Boot": {
     "dir": "java/spring",
@@ -95,7 +95,19 @@
     },
     "supports": [
       "get-json-entity",
-      "post-json-entity-and-return-it",
+      "post-json-entity",
+      "get-plain-text"
+    ]
+  },
+  "Colossus": {
+    "dir": "scala/colossus",
+    "build": "sbt assembly",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/scala-2.12/colossus.jar"]
+    },
+    "supports": [
+      "get-json-entity",
       "get-plain-text"
     ]
   }
