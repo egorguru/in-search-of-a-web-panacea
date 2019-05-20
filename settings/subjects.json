@@ -110,5 +110,17 @@
       "get-json-entity",
       "get-plain-text"
     ]
+  },
+  "Blaze": {
+    "dir": "scala/blaze",
+    "build": "sbt assembly",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/scala-2.12/blaze.jar"]
+    },
+    "supports": [
+      "get-json-entity",
+      "get-plain-text"
+    ]
   }
 }

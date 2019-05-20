@@ -1,4 +1,4 @@
-name := """colossus"""
+name := "colossus"
 
 version := "1.0"
 
