@@ -122,5 +122,17 @@
       "get-json-entity",
       "get-plain-text"
     ]
+  },
+  "Cask": {
+    "dir": "scala/cask",
+    "build": "sbt assembly",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/scala-2.12/cask.jar"]
+    },
+    "supports": [
+      "get-json-entity",
+      "get-plain-text"
+    ]
   }
 }
