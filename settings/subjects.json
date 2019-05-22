@@ -99,6 +99,18 @@
       "get-plain-text"
     ]
   },
+  "Proteus": {
+    "dir": "java/proteus",
+    "build": "mvn clean package",
+    "run": {
+      "command": "java",
+      "args": ["-jar", "target/proteus.jar"]
+    },
+    "supports": [
+      "get-json-entity",
+      "get-plain-text"
+    ]
+  },
   "Colossus": {
     "dir": "scala/colossus",
     "build": "sbt assembly",
