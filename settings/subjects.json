@@ -84,7 +84,9 @@
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
     },
-    "supports": []
+    "supports": [
+      "get-plain-text"
+    ]
   },
   "Spring Boot": {
     "dir": "java/spring",
