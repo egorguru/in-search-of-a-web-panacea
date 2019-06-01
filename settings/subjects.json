@@ -146,5 +146,18 @@
       "get-json-entity",
       "get-plain-text"
     ]
+  },
+  "Actix": {
+    "dir": "rust/actix",
+    "build": "cargo build --release",
+    "run": {
+      "command": "./target/release/actix",
+      "args": []
+    },
+    "supports": [
+      "get-json-entity",
+      "post-json-entity",
+      "get-plain-text"
+    ]
   }
 }
