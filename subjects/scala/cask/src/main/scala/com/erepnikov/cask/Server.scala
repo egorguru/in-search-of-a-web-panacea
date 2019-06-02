@@ -5,22 +5,32 @@ import com.github.plokhotnyuk.jsoniter_scala.core.{JsonValueCodec, writeToArray}
 import com.github.plokhotnyuk.jsoniter_scala.macros.{CodecMakerConfig, JsonCodecMaker}
 import io.undertow.Undertow
 
-case class Message(id: Int, message: String, extra: Array[String])
+case class TinyEntity(message: String)
+
+case class LargeEntity(id: Int, message: String, entity: TinyEntity, extra: Array[String])
 
 object Controller extends Routes {
 
-  implicit val codec: JsonValueCodec[Message] = JsonCodecMaker.make[Message](CodecMakerConfig())
+  implicit val tinyEntityCodec: JsonValueCodec[TinyEntity] = JsonCodecMaker.make[TinyEntity](CodecMakerConfig())
+  implicit val largeEntityCodec: JsonValueCodec[LargeEntity] = JsonCodecMaker.make[LargeEntity](CodecMakerConfig())
 
-  @get("/api/get-json-entity")
-  def getJsonEntity() = Response(
-    data = writeToArray(Message(123, "Hello There", Array("And", "There"))),
+  @get("/api/get-tiny-json-entity")
+  def getTinyJsonEntity() = Response(
+    data = writeToArray(TinyEntity("Hello There")),
+    headers = Seq("Content-Type" -> "application/json")
+  )
+
+  @get("/api/get-large-json-entity")
+  def getLargeJsonEntity() = Response(
+    data = writeToArray(
+      LargeEntity(123, "Hello There", TinyEntity("Hello There Again"), Array("And", "Again"))),
     headers = Seq("Content-Type" -> "application/json")
   )
 
   @get("/api/get-plain-text")
   def getPlainText() = Response(
     data = "Hello There",
-    headers = Seq("Content-Type" -> "plain/text")
+    headers = Seq("Content-Type" -> "text/plain")
   )
 
   initialize()

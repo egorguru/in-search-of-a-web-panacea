@@ -12,18 +12,24 @@ import org.http4s.blaze.pipeline.LeafBuilder
 
 import scala.concurrent.Future
 
-case class Message(id: Int, message: String, extra: Array[String])
+case class TinyEntity(message: String)
+
+case class LargeEntity(id: Int, message: String, entity: TinyEntity, extra: Array[String])
 
 object Server {
 
-  implicit val codec: JsonValueCodec[Message] = JsonCodecMaker.make[Message](CodecMakerConfig())
+  implicit val tinyEntityCodec: JsonValueCodec[TinyEntity] = JsonCodecMaker.make[TinyEntity](CodecMakerConfig())
+  implicit val largeEntityCodec: JsonValueCodec[LargeEntity] = JsonCodecMaker.make[LargeEntity](CodecMakerConfig())
 
   def serve(req: HttpRequest): Future[RouteAction] = Future.successful {
     req.url match {
-      case "/api/get-plain-text" => Ok("Hello, World!".getBytes(), Seq("content-type" -> "text/plain"))
-      case "/api/get-json-entity" => Ok(
-        writeToArray(Message(123, "Hello There", Array("And", "There"))),
+      case "/api/get-tiny-json-entity" => Ok(
+        writeToArray(TinyEntity("Hello There")),
         Seq("content-type" -> "application/json"))
+      case "/api/get-large-json-entity" => Ok(
+        writeToArray(LargeEntity(123, "Hello There", TinyEntity("Hello There Again"), Array("And", "Again"))),
+        Seq("content-type" -> "application/json"))
+      case "/api/get-plain-text" => Ok("Hello, World!".getBytes(), Seq("content-type" -> "text/plain"))
       case _ => String("Not found", 404, "Not Found", Nil)
     }
   }

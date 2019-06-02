@@ -1,13 +1,23 @@
 {
-  "get-json-entity": {
-    "url": "http://localhost:8080/api/get-json-entity",
+  "get-tiny-json-entity": {
+    "url": "http://localhost:8080/api/get-tiny-json-entity",
     "method": "GET"
   },
-  "post-json-entity": {
+  "get-large-json-entity": {
+    "url": "http://localhost:8080/api/get-large-json-entity",
+    "method": "GET"
+  },
+  "post-tiny-json-entity": {
     "url": "http://localhost:8080/api/post-json-entity",
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"id\":123,\"message\":\"Hi There\",\"extra\":[\"And\", \"There\"]}"
+    "body": "{\"message\":\"Hello There\"}"
+  },
+  "post-large-json-entity": {
+    "url": "http://localhost:8080/api/post-json-entity",
+    "method": "POST",
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"id\":123,\"message\":\"Hello There\",\"entity\":{\"message\":\"Hello There Again\"},\"extra\":[\"And\", \"Again\"]}"
   },
   "get-plain-text": {
     "url": "http://localhost:8080/api/get-plain-text",

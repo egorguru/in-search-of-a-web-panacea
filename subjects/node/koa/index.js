@@ -6,20 +6,32 @@ const app = new Koa()
 
 const router = new Router().prefix('/api')
 
-router.post('/post-json-entity', (ctx) => {
+router.get('/get-tiny-json-entity', (ctx) => {
+  ctx.body = { message: 'Hello There' }
+})
+
+router.get('/get-large-json-entity', (ctx) => {
+  ctx.body = {
+    id: 123,
+    message: 'Hello There',
+    entity: {
+      message: 'Hello There Again'
+    },
+    extra: [
+      'And',
+      'Again'
+    ]
+  }
+})
+
+router.post('/post-tiny-json-entity', (ctx) => {
   ctx.body = ctx.request.body
   ctx.status = 201
 })
 
-router.get('/get-json-entity', (ctx) => {
-  ctx.body = {
-    id: 123,
-    message: 'Hello There',
-    extra: [
-      'And',
-      'There'
-    ]
-  }
+router.post('/post-large-json-entity', (ctx) => {
+  ctx.body = ctx.request.body
+  ctx.status = 201
 })
 
 router.get('/get-plain-text', (ctx) => {

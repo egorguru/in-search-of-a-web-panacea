@@ -14,7 +14,7 @@ public class Server {
             try (Socket socket = server.accept(); OutputStream os = socket.getOutputStream()) {
                 String content = "Hello There";
                 String result = String.format(
-                        "HTTP/1.1 200 OK%nContent-Type: plain/text%nContent-Length: %s%n%n%s",
+                        "HTTP/1.1 200 OK%nContent-Type: text/plain%nContent-Length: %s%n%n%s",
                         content.length(), content
                 );
                 os.write(result.getBytes());

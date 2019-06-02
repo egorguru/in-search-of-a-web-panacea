@@ -13,20 +13,32 @@ app.addHandlerAfter(jsonResponse.after)
 
 const router = new Router({ prefix: '/api' })
 
-router.post('/post-json-entity', (data) => {
-  data.response.body = data.request.body
+router.get('/get-tiny-json-entity', (data) => {
+  data.response.body = { message: 'Hello There' }
+  data.response.status = 201
 })
 
-router.get('/get-json-entity', (data) => {
+router.get('/get-large-json-entity', (data) => {
   data.response.body = {
     id: 123,
     message: 'Hello There',
+    entity: {
+      message: 'Hello There Again'
+    },
     extra: [
       'And',
-      'There'
+      'Again'
     ]
   }
   data.response.status = 201
+})
+
+router.post('/post-tiny-json-entity', (data) => {
+  data.response.body = data.request.body
+})
+
+router.post('/post-large-json-entity', (data) => {
+  data.response.body = data.request.body
 })
 
 router.get('/get-plain-text', (data) => {

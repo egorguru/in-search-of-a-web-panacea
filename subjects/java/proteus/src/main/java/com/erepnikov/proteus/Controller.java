@@ -11,14 +11,22 @@ import java.nio.ByteBuffer;
 public class Controller {
 
     @GET
-    @Path("/get-json-entity")
-    public ServerResponse<Message> getJsonEntity() {
-        Message message = new Message(
+    @Path("/get-tiny-json-entity")
+    public ServerResponse<TinyEntity> getTinyJsonEntity() {
+        TinyEntity entity = new TinyEntity("Hello There");
+        return ServerResponse.response(entity).applicationJson();
+    }
+
+    @GET
+    @Path("/get-large-json-entity")
+    public ServerResponse<LargeEntity> getLargeJsonEntity() {
+        LargeEntity entity = new LargeEntity(
                 123,
                 "Hello There",
-                new String[] {"And", "There"}
+                new TinyEntity("Hello There Again"),
+                new String[] {"And", "Again"}
         );
-        return ServerResponse.response(message).applicationJson();
+        return ServerResponse.response(entity).applicationJson();
     }
 
     @GET

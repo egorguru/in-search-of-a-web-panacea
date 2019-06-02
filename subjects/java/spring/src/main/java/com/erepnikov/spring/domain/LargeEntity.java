@@ -1,18 +1,21 @@
 package com.erepnikov.spring.domain;
 
-public class Message {
+public class LargeEntity {
 
     private Integer id;
 
     private String message;
 
+    private TinyEntity entity;
+
     private String[] extra;
 
-    public Message() {}
+    public LargeEntity() {}
 
-    public Message(Integer id, String message, String[] extra) {
+    public LargeEntity(Integer id, String message, TinyEntity entity, String[] extra) {
         this.id = id;
         this.message = message;
+        this.entity = entity;
         this.extra = extra;
     }
 
@@ -30,6 +33,14 @@ public class Message {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public TinyEntity getTinyEntity() {
+        return entity;
+    }
+
+    public void setTinyEntity(TinyEntity entity) {
+        this.entity = entity;
     }
 
     public String[] getExtra() {
