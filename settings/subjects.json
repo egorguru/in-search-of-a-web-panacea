@@ -3,8 +3,8 @@
     "dir": "node/bare-node",
     "build": "npm install",
     "run": {
-      "command": "npm",
-      "args": ["run", "start"]
+      "command": "node",
+      "args": ["index.js"]
     },
     "supports": [
       "get-tiny-json-entity",
@@ -18,8 +18,8 @@
     "dir": "node/dragonrend",
     "build": "npm install",
     "run": {
-      "command": "npm",
-      "args": ["run", "start"]
+      "command": "node",
+      "args": ["index.js"]
     },
     "supports": [
       "get-tiny-json-entity",
@@ -33,8 +33,8 @@
     "dir": "node/express",
     "build": "npm install",
     "run": {
-      "command": "npm",
-      "args": ["run", "start"]
+      "command": "node",
+      "args": ["index.js"]
     },
     "supports": [
       "get-tiny-json-entity",
@@ -48,8 +48,8 @@
     "dir": "node/fastify",
     "build": "npm install",
     "run": {
-      "command": "npm",
-      "args": ["run", "start"]
+      "command": "node",
+      "args": ["index.js"]
     },
     "supports": [
       "get-tiny-json-entity",
@@ -63,8 +63,8 @@
     "dir": "node/koa",
     "build": "npm install",
     "run": {
-      "command": "npm",
-      "args": ["run", "start"]
+      "command": "node",
+      "args": ["index.js"]
     },
     "supports": [
       "get-tiny-json-entity",
