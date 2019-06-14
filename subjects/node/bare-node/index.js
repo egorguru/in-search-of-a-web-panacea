@@ -5,11 +5,11 @@ http.createServer((req, res) => {
   const path = url.parse(req.url, true).pathname
   switch (path) {
     case '/api/get-tiny-json-entity':
-      res.writeHead(201, { 'Content-Type': 'application/json' })
+      res.writeHead(200, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ message: 'Hello There' }))
       break
     case '/api/get-large-json-entity':
-      res.writeHead(201, { 'Content-Type': 'application/json' })
+      res.writeHead(200, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({
         id: 123,
         message: 'Hello There',
@@ -27,7 +27,7 @@ http.createServer((req, res) => {
       req.on('data', (chunk) => buffer1 += chunk)
       req.on('end', () => {
         const body = JSON.parse(buffer1)
-        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.writeHead(201, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify(body))
       })
       break
@@ -36,12 +36,12 @@ http.createServer((req, res) => {
       req.on('data', (chunk) => buffer2 += chunk)
       req.on('end', () => {
         const body = JSON.parse(buffer2)
-        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.writeHead(201, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify(body))
       })
       break
     case '/api/get-plain-text':
-      res.writeHead(201, { 'Content-Type': 'text/plain' })
+      res.writeHead(200, { 'Content-Type': 'text/plain' })
       res.end('Hello There')
       break
     default:
