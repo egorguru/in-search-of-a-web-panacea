@@ -26,7 +26,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Express.js": {
@@ -41,7 +42,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Fastify.js": {
@@ -56,7 +58,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Koa.js": {
@@ -71,7 +74,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Java Http Server": {
@@ -112,7 +116,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Proteus": {
@@ -125,7 +130,8 @@
     "supports": [
       "get-tiny-json-entity",
       "get-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Colossus": {
@@ -138,7 +144,8 @@
     "supports": [
       "get-tiny-json-entity",
       "get-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Blaze": {
@@ -164,7 +171,8 @@
     "supports": [
       "get-tiny-json-entity",
       "get-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   },
   "Actix": {

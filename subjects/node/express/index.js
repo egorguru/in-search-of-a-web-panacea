@@ -36,7 +36,14 @@ router.post('/post-large-json-entity', (req, res) => {
 })
 
 router.get('/get-plain-text', (req, res) => {
-  res.send('Hello There')
+  res.contentType('text/plain').send('Hello There')
+})
+
+router.get('/get-tiny-json-entity-by-id/:id', (req, res) => {
+  res.json({
+    id: req.params.id,
+    message: 'Hello There'
+  })
 })
 
 app.use('/api', router)

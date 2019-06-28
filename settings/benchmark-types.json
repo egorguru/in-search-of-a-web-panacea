@@ -22,5 +22,9 @@
   "get-plain-text": {
     "url": "http://localhost:8080/api/get-plain-text",
     "method": "GET"
+  },
+  "get-tiny-json-entity-by-id": {
+    "url": "http://localhost:8080/api/get-tiny-json-entity-by-id/123",
+    "method": "GET"
   }
 }

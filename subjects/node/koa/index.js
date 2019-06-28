@@ -36,6 +36,14 @@ router.post('/post-large-json-entity', (ctx) => {
 
 router.get('/get-plain-text', (ctx) => {
   ctx.body = 'Hello There'
+  ctx.type = 'text/plain'
+})
+
+router.get('/get-tiny-json-entity-by-id/:id', (ctx) => {
+  ctx.body = {
+    id: ctx.params.id,
+    message: 'Hello There'
+  }
 })
 
 app.use(bodyparser())

@@ -9,10 +9,13 @@ case class TinyEntity(message: String)
 
 case class LargeEntity(id: Int, message: String, entity: TinyEntity, extra: Array[String])
 
+case class TinyEntityWithId(id: Int, message: String)
+
 object Controller extends Routes {
 
   implicit val tinyEntityCodec: JsonValueCodec[TinyEntity] = JsonCodecMaker.make[TinyEntity](CodecMakerConfig())
   implicit val largeEntityCodec: JsonValueCodec[LargeEntity] = JsonCodecMaker.make[LargeEntity](CodecMakerConfig())
+  implicit val tinyEntityWithIdCodec: JsonValueCodec[TinyEntityWithId] = JsonCodecMaker.make[TinyEntityWithId](CodecMakerConfig())
 
   @get("/api/get-tiny-json-entity")
   def getTinyJsonEntity() = Response(
@@ -31,6 +34,12 @@ object Controller extends Routes {
   def getPlainText() = Response(
     data = "Hello There",
     headers = Seq("Content-Type" -> "text/plain")
+  )
+
+  @get("/api/get-tiny-json-entity-by-id/:id")
+  def getTinyJsonEntityWithId(id: Int) = Response(
+    data = writeToArray(TinyEntityWithId(id, "Hello There")),
+    headers = Seq("Content-Type" -> "application/json")
   )
 
   initialize()

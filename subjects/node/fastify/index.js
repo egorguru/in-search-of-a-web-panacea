@@ -44,4 +44,13 @@ app.get('/api/get-plain-text', (request, reply) => {
     .send('Hello There')
 })
 
+app.get('/api/get-tiny-json-entity-by-id/:id', (request, reply) => {
+  reply
+    .header('Content-Type', 'application/json')
+    .send({
+      id: request.params.id,
+      message: 'Hello There'
+    })
+})
+
 app.listen(8080, () => console.log('START'))

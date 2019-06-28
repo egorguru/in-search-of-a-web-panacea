@@ -5,6 +5,7 @@ import io.sinistral.proteus.server.ServerResponse;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.nio.ByteBuffer;
 
 @Path("/api")
@@ -33,5 +34,12 @@ public class Controller {
     @Path("/get-plain-text")
     public ServerResponse<ByteBuffer> getPlainText(ServerRequest request) {
         return ServerResponse.response("Hello There").textPlain();
+    }
+
+    @GET
+    @Path("/get-tiny-json-entity-by-id/{id}")
+    public ServerResponse<TinyEntityWithId> getTinyJsonEntityWithId(@PathParam("id") Integer id) {
+        TinyEntityWithId entity = new TinyEntityWithId(id, "Hello There");
+        return ServerResponse.response(entity).applicationJson();
     }
 }

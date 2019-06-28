@@ -39,4 +39,9 @@ public class MessageController {
     public String getPlainText() {
         return "Hello There";
     }
+
+    @GetMapping("/get-tiny-json-entity-by-id/{id}")
+    public TinyEntityWithId getTinyJsonEntity(@PathVariable("id") Integer id) {
+        return new TinyEntityWithId(id, "Hello There");
+    }
 }

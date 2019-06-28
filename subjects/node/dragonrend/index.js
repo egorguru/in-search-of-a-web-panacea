@@ -43,7 +43,14 @@ router.post('/post-large-json-entity', (data) => {
 
 router.get('/get-plain-text', (data) => {
   data.response.body = 'Hello There'
-  data.response.contentType = 'application/json'
+  data.response.contentType = 'text/plain'
+})
+
+router.get('/get-tiny-json-entity-by-id/:id', (data) => {
+  data.response.body = {
+    id: data.params.id,
+    message: 'Hello There'
+  }
 })
 
 app.merge(router)

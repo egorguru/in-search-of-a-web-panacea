@@ -14,6 +14,8 @@ case class TinyEntity(message: String)
 
 case class LargeEntity(id: Int, message: String, entity: TinyEntity, extra: Array[String])
 
+case class TinyEntityWithId(id: Int, message: String)
+
 object Server extends App {
 
   implicit val actorSystem: ActorSystem = ActorSystem()
@@ -21,6 +23,7 @@ object Server extends App {
 
   implicit val tinyEntityCodec: JsonValueCodec[TinyEntity] = JsonCodecMaker.make[TinyEntity](CodecMakerConfig())
   implicit val largeEntityCodec: JsonValueCodec[LargeEntity] = JsonCodecMaker.make[LargeEntity](CodecMakerConfig())
+  implicit val tinyEntityWithIdCodec: JsonValueCodec[TinyEntityWithId] = JsonCodecMaker.make[TinyEntityWithId](CodecMakerConfig())
 
   implicit val tinyEntityEncoder: HttpBodyEncoder[TinyEntity] = new HttpBodyEncoder[TinyEntity] {
     override def encode(data: TinyEntity): HttpBody = new HttpBody(writeToArray(data))
@@ -29,6 +32,11 @@ object Server extends App {
 
   implicit val largeEntityEncoder: HttpBodyEncoder[LargeEntity] = new HttpBodyEncoder[LargeEntity] {
     override def encode(data: LargeEntity): HttpBody = new HttpBody(writeToArray(data))
+    override def contentType: String = "application/json"
+  }
+
+  implicit val tinyEntityWithIdEncoder: HttpBodyEncoder[TinyEntityWithId] = new HttpBodyEncoder[TinyEntityWithId] {
+    override def encode(data: TinyEntityWithId): HttpBody = new HttpBody(writeToArray(data))
     override def contentType: String = "application/json"
   }
 
@@ -42,6 +50,8 @@ object Server extends App {
             LargeEntity(123, "Hello There", TinyEntity("Hello There Again"), Array("And", "Again"))))
         case req @ Get on Root / "api" / "get-plain-text" =>
           Callback.successful(req.ok("Hello There"))
+        case req @ Get on Root / "api" / "get-tiny-json-entity-by-id" / id =>
+          Callback.successful(req.ok(TinyEntityWithId(id.toInt, "Hello There")))
       }
     }
   })
