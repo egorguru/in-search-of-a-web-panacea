@@ -1,8 +1,7 @@
 extern crate actix_web;
-
 #[macro_use] extern crate serde_derive;
 
-use actix_web::{http, server, App, HttpRequest, HttpResponse, Json};
+use actix_web::{App, http, HttpRequest, HttpResponse, Json, server};
 
 #[derive(Serialize, Deserialize)]
 struct TinyEntity {
@@ -15,6 +14,12 @@ struct LargeEntity {
     message: String,
     entity: TinyEntity,
     extra: Vec<String>
+}
+
+#[derive(Serialize, Deserialize)]
+struct TinyEntityWithId {
+    id: i32,
+    message: String
 }
 
 fn get_tiny_json_entity(req: &HttpRequest) -> HttpResponse {
@@ -50,6 +55,14 @@ fn get_plain_text(req: &HttpRequest) -> HttpResponse {
         .body("Hello There")
 }
 
+fn get_tiny_json_entity_by_id(req: &HttpRequest) -> HttpResponse {
+    HttpResponse::Ok()
+        .json(TinyEntityWithId {
+            id: req.match_info().query("id").unwrap(),
+            message: "Hello There".to_string()
+        })
+}
+
 fn main() {
     println!("START");
     server::new(|| {
@@ -69,6 +82,9 @@ fn main() {
             })
             .resource("/get-plain-text", |r| {
                 r.method(http::Method::GET).f(get_plain_text)
+            })
+            .resource("/get-tiny-json-entity-by-id/{id}", |r| {
+                r.method(http::Method::GET).f(get_tiny_json_entity_by_id)
             })
             .finish()
     })
