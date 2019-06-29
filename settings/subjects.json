@@ -187,7 +187,8 @@
       "get-large-json-entity",
       "post-tiny-json-entity",
       "post-large-json-entity",
-      "get-plain-text"
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
     ]
   }
 }
