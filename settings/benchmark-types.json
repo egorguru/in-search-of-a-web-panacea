@@ -8,13 +8,13 @@
     "method": "GET"
   },
   "post-tiny-json-entity": {
-    "url": "http://localhost:8080/api/post-json-entity",
+    "url": "http://localhost:8080/api/post-tiny-json-entity",
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
     "body": "{\"message\":\"Hello There\"}"
   },
   "post-large-json-entity": {
-    "url": "http://localhost:8080/api/post-json-entity",
+    "url": "http://localhost:8080/api/post-large-json-entity",
     "method": "POST",
     "headers": { "Content-Type": "application/json" },
     "body": "{\"id\":123,\"message\":\"Hello There\",\"entity\":{\"message\":\"Hello There Again\"},\"extra\":[\"And\", \"Again\"]}"
