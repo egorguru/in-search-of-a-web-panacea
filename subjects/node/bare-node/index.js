@@ -1,7 +1,9 @@
 const http = require('http')
 const url = require('url')
 
-http.createServer((req, res) => {
+const cluster = require('../cluster')
+
+const server = http.createServer((req, res) => {
   const path = url.parse(req.url, true).pathname
   switch (path) {
     case '/api/get-tiny-json-entity':
@@ -48,4 +50,8 @@ http.createServer((req, res) => {
       res.writeHead(404, { 'Content-Type': 'application/json' })
       res.end(JSON.stringify({ message: 'Not Found' }))
   }
-}).listen(8080, () => console.log('START'))
+})
+
+cluster(() => {
+  server.listen(8080, () => console.log('START'))
+})

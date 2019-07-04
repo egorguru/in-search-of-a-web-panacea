@@ -3,6 +3,8 @@ const { Dragonrend, Router } = require('dragonrend')
 const jsonBodyParser = require('dragonrend-json-body-parser')
 const jsonResponse = require('dragonrend-response')
 
+const cluster = require('../cluster')
+
 const app = new Dragonrend()
 
 app.addHandlerBefore(jsonBodyParser.before)
@@ -55,6 +57,8 @@ router.get('/get-tiny-json-entity-by-id/:id', (data) => {
 
 app.merge(router)
 
-http
-  .createServer(app.toListener())
-  .listen(8080, () => console.log('START'))
+cluster(() => {
+  http
+    .createServer(app.toListener())
+    .listen(8080, () => console.log('START'))
+})

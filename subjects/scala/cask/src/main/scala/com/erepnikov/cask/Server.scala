@@ -50,7 +50,6 @@ object Server extends Main(Controller) {
   override def main(args: Array[String]): Unit = {
     val server = Undertow.builder
       .addHttpListener(8080, host)
-      .setIoThreads(Runtime.getRuntime().availableProcessors() * 2)
       .setHandler(defaultHandler)
       .build
     server.start()

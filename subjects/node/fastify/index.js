@@ -1,5 +1,7 @@
 const fastify = require('fastify')
 
+const cluster = require('../cluster')
+
 const app = fastify()
 
 app.get('/api/get-tiny-json-entity', (request, reply) => {
@@ -53,4 +55,6 @@ app.get('/api/get-tiny-json-entity-by-id/:id', (request, reply) => {
     })
 })
 
-app.listen(8080, () => console.log('START'))
+cluster(() => {
+  app.listen(8080, () => console.log('START'))
+})

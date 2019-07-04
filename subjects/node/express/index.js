@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
+const cluster = require('../cluster')
+
 const app = express()
 
 const router = express.Router()
@@ -48,4 +50,6 @@ router.get('/get-tiny-json-entity-by-id/:id', (req, res) => {
 
 app.use('/api', router)
 
-app.listen(8080, () => console.log('START'))
+cluster(() => {
+  app.listen(8080, () => console.log('START'))
+})

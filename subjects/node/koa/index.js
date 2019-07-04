@@ -2,6 +2,8 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const bodyparser = require('koa-bodyparser')
 
+const cluster = require('../cluster')
+
 const app = new Koa()
 
 const router = new Router().prefix('/api')
@@ -50,4 +52,6 @@ app.use(bodyparser())
 
 app.use(router.routes())
 
-app.listen(8080, () => console.log('START'))
+cluster(() => {
+  app.listen(8080, () => console.log('START'))
+})
