@@ -39,6 +39,7 @@ or
 $ npm start
 ```
 **Params**:
+
 | Keys                                | Description                   | Default              |
 |-------------------------------------|-------------------------------|----------------------|
 | -t \| -type \| --type               | Benchmark Type                | get-tiny-json-entity |
@@ -55,9 +56,9 @@ $ npm start -- -t get-plain-text -c 50 -p 5 -d 30
 It is recommended to add the source code of the test subject to the appropriate language in the folder in the subjects folder. For example, you add the source code of some Java-framework: `subjects/java/some-framework` <- sources here
 
 Then you have to add a test subject to settings/subjects.json and create the new object:
-```json
+```js
 {
-  ...previous subjects,
+  // previous subjects
   "Some Java Framework": {
     "dir": "java/some-framework", // Source folder
     "build": "mvn clean package", // Command to start the build process
@@ -75,9 +76,9 @@ Then you have to add a test subject to settings/subjects.json and create the new
 
 # How to add a new benchmark type?
 You can add a new type in the benchmark types file:
-```json
+```js
 {
-  ...previous types,
+  // previous types
   "post-some-json-entity": {
     "url": "http://localhost:8080/api/post-some-json-entity",
     "method": "POST",
