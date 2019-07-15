@@ -2,7 +2,7 @@
     "type": "get-tiny-json-entity",
     "connections": 100,
     "pipelining": 10,
-    "duration": 40,
+    "duration": 60,
     "builder-processes-stdio": "inherit",
     "start-signal": "START"
 }

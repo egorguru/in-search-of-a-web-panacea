@@ -7,11 +7,8 @@ const cluster = require('../cluster')
 
 const app = new Dragonrend()
 
-app.addHandlerBefore(jsonBodyParser.before)
-
-app.addHandlerBefore(jsonResponse.before)
-
-app.addHandlerAfter(jsonResponse.after)
+app.handler(jsonBodyParser)
+jsonResponse(app)
 
 const router = new Router({ prefix: '/api' })
 
