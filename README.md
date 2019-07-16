@@ -2,7 +2,7 @@
 This is the benchmark needed to find the perfect programming language and web development framework at least the fastest.
 
 # Results
-- [Stage 1](https://artaeum.com/articles/16) (06.07.2019)
+- [Stage 0](https://artaeum.com/articles/5d2bd26f1ac9153787026ff2) (15.07.2019)
 
 # How to run?
 If you want to run the benchmark yourself, then follow these instructions:
