@@ -1,5 +1,5 @@
 const http = require('http')
-const { Dragonrend, Router } = require('../../../../dragonrend')
+const { Dragonrend, Router } = require('dragonrend')
 const jsonBodyParser = require('dragonrend-json-body-parser')
 const response = require('dragonrend-response')
 
