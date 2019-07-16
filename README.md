@@ -45,7 +45,7 @@ $ npm start
 | -t \| -type \| --type               | Benchmark Type                | get-tiny-json-entity |
 | -c \| -connections \| --connections | Count of Connections          | 100                  |
 | -p \| -pipelining \| --pipelining   | Count of Pipelines            | 10                   |
-| -d \| -duration \| --duration       | Duration of Benchmark running | 40                   |
+| -d \| -duration \| --duration       | Duration of Benchmark running | 60                   |
 
 The command may look like this:
 ```bash
