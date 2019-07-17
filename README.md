@@ -74,6 +74,8 @@ Then you have to add a test subject to settings/subjects.json and create the new
 }
 ```
 
+> **Important** The subject should print a "START" signal at startup.
+
 # How to add a new benchmark type?
 You can add a new type in the benchmark types file:
 ```js
