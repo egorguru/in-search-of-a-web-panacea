@@ -1,6 +1,8 @@
 # In Search of a Web Panacea
 This is the benchmark needed to find the perfect programming language and web development framework at least the fastest.
 
+![Image of ISoaWP](https://github.com/EgorRepnikov/in-search-of-a-web-panacea/raw/master/image.png)
+
 # Results
 - [Stage 0](https://artaeum.com/articles/5d2bd26f1ac9153787026ff2) (15.07.2019)
 
@@ -25,11 +27,6 @@ $ git clone https://github.com/EgorRepnikov/in-search-of-a-web-panacea.git
 
 ## Commands
 
-### **Build**
-```bash
-$ npm run build
-```
-
 ### **Run Benchmark**
 ```bash
 $ npm run start
@@ -38,19 +35,7 @@ or
 ```bash
 $ npm start
 ```
-**Params**:
-
-| Keys                                | Description                   | Default              |
-|-------------------------------------|-------------------------------|----------------------|
-| -t \| -type \| --type               | Benchmark Type                | get-tiny-json-entity |
-| -c \| -connections \| --connections | Count of Connections          | 100                  |
-| -p \| -pipelining \| --pipelining   | Count of Pipelines            | 10                   |
-| -d \| -duration \| --duration       | Duration of Benchmark running | 60                   |
-
-The command may look like this:
-```bash
-$ npm start -- -t get-plain-text -c 50 -p 5 -d 30
-```
+Then you should follow the instructions of CLI.
 
 # How to add a new test subject?
 It is recommended to add the source code of the test subject to the appropriate language in the folder in the subjects folder. For example, you add the source code of some Java-framework: `subjects/java/some-framework` <- sources here
