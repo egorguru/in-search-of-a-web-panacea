@@ -4,7 +4,6 @@
   "description": "Benchmark of Web Instruments",
   "main": "index.js",
   "scripts": {
-    "build": "node lib/builder.js",
     "start": "node index.js"
   },
   "repository": {
