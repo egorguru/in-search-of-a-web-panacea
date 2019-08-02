@@ -4,5 +4,6 @@
     "pipelining": 10,
     "duration": 60,
     "builder-processes-stdio": "inherit",
+    "cleaner-processes-stdio": "inherit",
     "start-signal": "START"
 }
