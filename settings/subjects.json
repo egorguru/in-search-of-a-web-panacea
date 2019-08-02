@@ -2,6 +2,7 @@
   "Bare Node.js": {
     "dir": "node/bare-node",
     "build": "npm install",
+    "clean": "rm -rf node_modules && rm package-lock.json",
     "run": {
       "command": "node",
       "args": ["index.js"]
@@ -17,6 +18,7 @@
   "Dragonrend.js": {
     "dir": "node/dragonrend",
     "build": "npm install",
+    "clean": "rm -rf node_modules && rm package-lock.json",
     "run": {
       "command": "node",
       "args": ["index.js"]
@@ -33,6 +35,7 @@
   "Express.js": {
     "dir": "node/express",
     "build": "npm install",
+    "clean": "rm -rf node_modules && rm package-lock.json",
     "run": {
       "command": "node",
       "args": ["index.js"]
@@ -49,6 +52,7 @@
   "Fastify.js": {
     "dir": "node/fastify",
     "build": "npm install",
+    "clean": "rm -rf node_modules && rm package-lock.json",
     "run": {
       "command": "node",
       "args": ["index.js"]
@@ -65,6 +69,7 @@
   "Koa.js": {
     "dir": "node/koa",
     "build": "npm install",
+    "clean": "rm -rf node_modules && rm package-lock.json",
     "run": {
       "command": "node",
       "args": ["index.js"]
@@ -81,6 +86,7 @@
   "Java Http Server": {
     "dir": "java/http-server",
     "build": "mvn clean package",
+    "clean": "mvn clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/http-server.jar"]
@@ -96,6 +102,7 @@
   "Java Socket Server": {
     "dir": "java/socket-server",
     "build": "mvn clean package",
+    "clean": "mvn clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/socket-server.jar"]
@@ -107,6 +114,7 @@
   "Spring Boot": {
     "dir": "java/spring",
     "build": "mvn clean package",
+    "clean": "mvn clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/spring.jar"]
@@ -123,6 +131,7 @@
   "Proteus": {
     "dir": "java/proteus",
     "build": "mvn clean package",
+    "clean": "mvn clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/proteus.jar"]
@@ -137,6 +146,7 @@
   "Colossus": {
     "dir": "scala/colossus",
     "build": "sbt assembly",
+    "clean": "sbt clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/scala-2.12/colossus.jar"]
@@ -151,6 +161,7 @@
   "Blaze": {
     "dir": "scala/blaze",
     "build": "sbt assembly",
+    "clean": "sbt clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/scala-2.12/blaze.jar"]
@@ -164,6 +175,7 @@
   "Cask": {
     "dir": "scala/cask",
     "build": "sbt assembly",
+    "clean": "sbt clean",
     "run": {
       "command": "java",
       "args": ["-jar", "target/scala-2.12/cask.jar"]
@@ -178,6 +190,7 @@
   "Actix": {
     "dir": "rust/actix",
     "build": "cargo build --release",
+    "clean": "cargo clean",
     "run": {
       "command": "./target/release/actix",
       "args": []
