@@ -99,18 +99,6 @@
       "get-plain-text"
     ]
   },
-  "Java Socket Server": {
-    "dir": "java/socket-server",
-    "build": "mvn clean package",
-    "clean": "mvn clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/socket-server.jar"]
-    },
-    "supports": [
-      "get-plain-text"
-    ]
-  },
   "Spring Boot": {
     "dir": "java/spring",
     "build": "mvn clean package",
