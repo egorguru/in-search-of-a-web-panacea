@@ -8,8 +8,6 @@
   "author": "Egor Repnikov <egorepnikov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dragonrend": "^0.9.0",
-    "dragonrend-json-body-parser": "^0.4.1",
-    "dragonrend-response": "^0.4.1"
+    "dragonrend": "^0.11.0"
   }
 }

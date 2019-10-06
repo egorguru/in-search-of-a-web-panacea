@@ -1,23 +1,17 @@
-const http = require('http')
 const { Dragonrend, Router } = require('dragonrend')
-const jsonBodyParser = require('dragonrend-json-body-parser')
-const response = require('dragonrend-response')
 
 const cluster = require('../cluster')
 
 const app = new Dragonrend()
 
-jsonBodyParser(app)
-response(app)
-
 const router = new Router({ prefix: '/api' })
 
 router.get('/get-tiny-json-entity', (ctx) => {
-  ctx.response.body = { message: 'Hello There' }
+  ctx.response.json({ message: 'Hello There' })
 })
 
 router.get('/get-large-json-entity', (ctx) => {
-  ctx.response.body = {
+  ctx.response.json({
     id: 123,
     message: 'Hello There',
     entity: {
@@ -27,35 +21,30 @@ router.get('/get-large-json-entity', (ctx) => {
       'And',
       'Again'
     ]
-  }
+  })
 })
 
 router.post('/post-tiny-json-entity', (ctx) => {
-  ctx.response.body = ctx.request.body
-  ctx.response.status = 201
+  ctx.response.status(201).json(ctx.request.body)
 })
 
 router.post('/post-large-json-entity', (ctx) => {
-  ctx.response.body = ctx.request.body
-  ctx.response.status = 201
+  ctx.response.status(201).json(ctx.request.body)
 })
 
 router.get('/get-plain-text', (ctx) => {
-  ctx.response.body = 'Hello There'
-  ctx.response.contentType = 'text/plain'
+  ctx.response.text('Hello There')
 })
 
 router.get('/get-tiny-json-entity-by-id/:id', (ctx) => {
-  ctx.response.body = {
+  ctx.response.json({
     id: ctx.params.id,
     message: 'Hello There'
-  }
+  })
 })
 
 app.merge(router)
 
 cluster(() => {
-  http
-    .createServer(app.toListener())
-    .listen(8080, () => console.log('START'))
+  app.listen(8080).then(() => console.log('START'))
 })
