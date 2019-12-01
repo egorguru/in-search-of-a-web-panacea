@@ -4,13 +4,13 @@ const cluster = require('../cluster')
 
 const app = fastify()
 
-app.get('/api/get-tiny-json-entity', (request, reply) => {
+app.get('/api/get-tiny-json-entity', (_, reply) => {
   reply
     .header('Content-Type', 'application/json')
     .send({ message: 'Hello There' })
 })
 
-app.get('/api/get-large-json-entity', (request, reply) => {
+app.get('/api/get-large-json-entity', (_, reply) => {
   reply
     .header('Content-Type', 'application/json')
     .send({
@@ -40,7 +40,7 @@ app.post('/api/post-large-json-entity', (request, reply) => {
     .send(request.body)
 })
 
-app.get('/api/get-plain-text', (request, reply) => {
+app.get('/api/get-plain-text', (_, reply) => {
   reply
     .header('Content-Type', 'text/plain')
     .send('Hello There')

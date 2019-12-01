@@ -8,6 +8,6 @@
   "author": "Egor Repnikov <egorepnikov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "fastify": "^2.9.0"
+    "fastify": "^2.10.0"
   }
 }
