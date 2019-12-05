@@ -13,7 +13,7 @@
         <dependency>
             <groupId>io.sinistral</groupId>
             <artifactId>proteus-core</artifactId>
-            <version>0.3.7</version>
+            <version>0.4.2</version>
         </dependency>
     </dependencies>
 
