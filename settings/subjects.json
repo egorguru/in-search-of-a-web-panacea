@@ -160,21 +160,6 @@
       "get-plain-text"
     ]
   },
-  "Cask": {
-    "dir": "scala/cask",
-    "build": "sbt assembly",
-    "clean": "sbt clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/scala-2.12/cask.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
   "Actix": {
     "dir": "rust/actix",
     "build": "cargo build --release",
