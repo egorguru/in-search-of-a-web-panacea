@@ -1,6 +1,6 @@
 {
   "name": "dragonrend-subject",
-  "version": "0.18.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -8,6 +8,6 @@
   "author": "Egor Repnikov <egorepnikov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dragonrend": "^1.0.0"
+    "dragonrend": "^0.18.1"
   }
 }
