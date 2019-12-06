@@ -23,7 +23,7 @@ Machine: AMD FX-8320 4.0 GHz, 12 GB RAM.
 | Blaze | 3390464 | 1.72 | 3390464 | 0 | 116 | 212.8 | 60.54 |
 | Actix | 3304113 | 1.77 | 3304113 | 0 | 97.5 | 11 | 60.59 |
 
-# get-large-json-entity
+## get-large-json-entity
 
 | Name | Requests Total | Latency Average | 2xx | Non 2xx | CPU % Average | Memory MB Average | Duration |
 | --- | --- | --- | --- | --- | --- | --- | --- |
