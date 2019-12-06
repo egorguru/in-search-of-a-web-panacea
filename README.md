@@ -4,6 +4,9 @@ This is the benchmark needed to find the perfect programming language and web de
 ![Image of ISoaWP](https://github.com/EgorRepnikov/in-search-of-a-web-panacea/raw/master/image.png)
 
 # Results
+
+Machine: AMD FX-8320 4.0 GHz, 12 GB RAM.
+
 ## get-tiny-json-entity
 
 | Name | Requests Total | Latency Average | 2xx | Non 2xx | CPU % Average | Memory MB Average | Duration |
