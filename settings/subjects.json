@@ -83,6 +83,23 @@
       "get-tiny-json-entity-by-id"
     ]
   },
+  "Nest.js (Fastify)": {
+    "dir": "node/nest-fastify",
+    "build": "npm install && npm run build",
+    "clean": "npm run prebuild && rm -rf node_modules && rm package-lock.json",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start:prod"]
+    },
+    "supports": [
+      "get-tiny-json-entity",
+      "get-large-json-entity",
+      "post-tiny-json-entity",
+      "post-large-json-entity",
+      "get-plain-text",
+      "get-tiny-json-entity-by-id"
+    ]
+  },
   "Java Http Server": {
     "dir": "java/http-server",
     "build": "mvn clean package",
