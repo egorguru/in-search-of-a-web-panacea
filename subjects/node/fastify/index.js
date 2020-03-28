@@ -1,58 +1,26 @@
+const { request } = require('http')
+const HttpAgent = require('agentkeepalive')
 const fastify = require('fastify')
 
 const cluster = require('../cluster')
 
 const app = fastify()
 
-app.get('/api/get-tiny-json-entity', (_, reply) => {
-  reply
-    .header('Content-Type', 'application/json')
-    .send({ message: 'Hello There' })
-})
+const agent = new HttpAgent()
 
-app.get('/api/get-large-json-entity', (_, reply) => {
-  reply
-    .header('Content-Type', 'application/json')
-    .send({
-      id: 123,
-      message: 'Hello There',
-      entity: {
-        message: 'Hello There Again'
-      },
-      extra: [
-        'And',
-        'Again'
-      ]
-    })
-})
-
-app.post('/api/post-tiny-json-entity', (request, reply) => {
-  reply
-    .code(201)
-    .header('Content-Type', 'application/json')
-    .send(request.body)
-})
-
-app.post('/api/post-large-json-entity', (request, reply) => {
-  reply
-    .code(201)
-    .header('Content-Type', 'application/json')
-    .send(request.body)
-})
-
-app.get('/api/get-plain-text', (_, reply) => {
-  reply
-    .header('Content-Type', 'text/plain')
-    .send('Hello There')
-})
-
-app.get('/api/get-tiny-json-entity-by-id/:id', (request, reply) => {
-  reply
-    .header('Content-Type', 'application/json')
-    .send({
-      id: request.params.id,
-      message: 'Hello There'
-    })
+app.get('/api/proxy', ({ raw: { url, headers } }, { res }) => {
+  request({
+    agent,
+    method: 'GET',
+    protocol: 'http:',
+    host: '127.0.0.1',
+    port: 8090,
+    path: url,
+    headers
+  }, response => {
+    res.writeHead(response.statusCode, response.headers)
+    response.pipe(res, { end: true })
+  }).end()
 })
 
 cluster(() => {

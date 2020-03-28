@@ -1,54 +1,4 @@
 {
-  "Bare Node.js": {
-    "dir": "node/bare-node",
-    "build": "npm install",
-    "clean": "rm -rf node_modules && rm package-lock.json",
-    "run": {
-      "command": "node",
-      "args": ["index.js"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text"
-    ]
-  },
-  "Dragonrend.js": {
-    "dir": "node/dragonrend",
-    "build": "npm install",
-    "clean": "rm -rf node_modules && rm package-lock.json",
-    "run": {
-      "command": "node",
-      "args": ["index.js"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Express.js": {
-    "dir": "node/express",
-    "build": "npm install",
-    "clean": "rm -rf node_modules && rm package-lock.json",
-    "run": {
-      "command": "node",
-      "args": ["index.js"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
   "Fastify.js": {
     "dir": "node/fastify",
     "build": "npm install",
@@ -58,123 +8,7 @@
       "args": ["index.js"]
     },
     "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Koa.js": {
-    "dir": "node/koa",
-    "build": "npm install",
-    "clean": "rm -rf node_modules && rm package-lock.json",
-    "run": {
-      "command": "node",
-      "args": ["index.js"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Nest.js (Fastify)": {
-    "dir": "node/nest-fastify",
-    "build": "npm install && npm run build",
-    "clean": "npm run prebuild && rm -rf node_modules && rm package-lock.json",
-    "run": {
-      "command": "npm",
-      "args": ["run", "start:prod"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Java Http Server": {
-    "dir": "java/http-server",
-    "build": "mvn clean package",
-    "clean": "mvn clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/http-server.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text"
-    ]
-  },
-  "Spring Boot": {
-    "dir": "java/spring",
-    "build": "mvn clean package",
-    "clean": "mvn clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/spring.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Proteus": {
-    "dir": "java/proteus",
-    "build": "mvn clean package",
-    "clean": "mvn clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/proteus.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Colossus": {
-    "dir": "scala/colossus",
-    "build": "sbt assembly",
-    "clean": "sbt clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/scala-2.12/colossus.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
-    ]
-  },
-  "Blaze": {
-    "dir": "scala/blaze",
-    "build": "sbt assembly",
-    "clean": "sbt clean",
-    "run": {
-      "command": "java",
-      "args": ["-jar", "target/scala-2.12/blaze.jar"]
-    },
-    "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "get-plain-text"
+      "proxy"
     ]
   },
   "Actix": {
@@ -186,12 +20,7 @@
       "args": []
     },
     "supports": [
-      "get-tiny-json-entity",
-      "get-large-json-entity",
-      "post-tiny-json-entity",
-      "post-large-json-entity",
-      "get-plain-text",
-      "get-tiny-json-entity-by-id"
+      "proxy"
     ]
   }
 }

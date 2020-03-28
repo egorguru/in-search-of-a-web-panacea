@@ -1,30 +1,6 @@
 {
-  "get-tiny-json-entity": {
-    "url": "http://localhost:8080/api/get-tiny-json-entity",
-    "method": "GET"
-  },
-  "get-large-json-entity": {
-    "url": "http://localhost:8080/api/get-large-json-entity",
-    "method": "GET"
-  },
-  "post-tiny-json-entity": {
-    "url": "http://localhost:8080/api/post-tiny-json-entity",
-    "method": "POST",
-    "headers": { "Content-Type": "application/json" },
-    "body": "{\"message\":\"Hello There\"}"
-  },
-  "post-large-json-entity": {
-    "url": "http://localhost:8080/api/post-large-json-entity",
-    "method": "POST",
-    "headers": { "Content-Type": "application/json" },
-    "body": "{\"id\":123,\"message\":\"Hello There\",\"entity\":{\"message\":\"Hello There Again\"},\"extra\":[\"And\", \"Again\"]}"
-  },
-  "get-plain-text": {
-    "url": "http://localhost:8080/api/get-plain-text",
-    "method": "GET"
-  },
-  "get-tiny-json-entity-by-id": {
-    "url": "http://localhost:8080/api/get-tiny-json-entity-by-id/123",
+  "proxy": {
+    "url": "http://localhost:8080/api/proxy?first=hi&second=there",
     "method": "GET"
   }
 }
