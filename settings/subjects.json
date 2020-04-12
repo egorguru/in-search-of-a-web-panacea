@@ -100,6 +100,20 @@
       "get-tiny-json-entity-by-id"
     ]
   },
+  "uWebSockets": {
+    "dir": "node/u-web-sockets",
+    "build": "npm install",
+    "clean": "npm run prebuild && rm -rf node_modules && rm package-lock.json",
+    "run": {
+      "command": "npm",
+      "args": ["run", "start"]
+    },
+    "supports": [
+      "get-tiny-json-entity",
+      "get-large-json-entity",
+      "get-plain-text"
+    ]
+  },
   "Java Http Server": {
     "dir": "java/http-server",
     "build": "mvn clean package",
