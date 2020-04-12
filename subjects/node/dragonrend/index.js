@@ -1,4 +1,4 @@
-const { dragonrend, json, text } = require('dragonrend')
+const { dragonrend } = require('dragonrend')
 
 const cluster = require('../cluster')
 
@@ -9,9 +9,9 @@ const { GET, POST, START } = dragonrend({
   }
 })
 
-GET('/get-tiny-json-entity', () => json({ message: 'Hello There' }))
+GET('/get-tiny-json-entity', ctx => ctx.response.json({ message: 'Hello There' }))
 
-GET('/get-large-json-entity', () => json({
+GET('/get-large-json-entity', ctx => ctx.response.json({
   id: 123,
   message: 'Hello There',
   entity: {
@@ -23,13 +23,13 @@ GET('/get-large-json-entity', () => json({
   ]
 }))
 
-POST('/post-tiny-json-entity', ctx => json(201, ctx.request.body))
+POST('/post-tiny-json-entity', ctx => ctx.response.json(201, ctx.request.body))
 
-POST('/post-large-json-entity', ctx => json(201, ctx.request.body))
+POST('/post-large-json-entity', ctx => ctx.response.json(201, ctx.request.body))
 
-GET('/get-plain-text', () => text('Hello There'))
+GET('/get-plain-text', ctx => ctx.response.text('Hello There'))
 
-GET('/get-tiny-json-entity-by-id/:id', ctx => json({
+GET('/get-tiny-json-entity-by-id/:id', ctx => ctx.response.json({
   id: ctx.request.params.id,
   message: 'Hello There'
 }))
